@@ -21,7 +21,7 @@
       width: 100%;
       background-color: #001F54; /* Biru dongker */
       color: white;
-      padding: 10px 20px;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       z-index: 1000;
@@ -29,14 +29,15 @@
     }
 
     header img {
-      width: 40px;
-      height: 40px;
+      width: 60px; /* Ukuran logo lebih besar */
+      height: 60px;
       margin-right: 15px;
     }
 
     header h2 {
       flex: 1;
       text-align: center;
+      font-size: 24px; /* Judul lebih besar */
       margin: 0;
     }
 
@@ -48,17 +49,16 @@
       background: purple;
       color: white;
       border: none;
-      width: 40px;
-      height: 40px;
+      padding: 10px 15px;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 16px; /* Ukuran teks menu lebih besar */
     }
 
     .menu-content {
       display: none;
       position: absolute;
-      top: 50px;
+      top: 60px;
       right: 0;
       background-color: white;
       border: 1px solid #ccc;
@@ -84,7 +84,7 @@
 
     /* Main Content */
     main {
-      padding: 80px 20px;
+      padding: 100px 20px 20px;
     }
 
     h3 {
@@ -92,18 +92,21 @@
     }
 
     p {
-      margin-bottom: 20px;
+      margin: 15px 20px; /* Margin kiri dan kanan untuk jarak teks */
       line-height: 1.8;
     }
 
     /* Special Belalang Section */
     .belalang-container {
-      background: white;
-      border-radius: 50px;
+      background: linear-gradient(to bottom, #006400, #32CD32); /* Gradiasi hijau tua ke terang */
+      border-radius: 20px;
       padding: 20px;
-      margin: 20px 0;
+      margin: 40px 20px; /* Jarak lebih longgar dari elemen atas */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 100%;
+    }
+
+    .belalang-container h3, .belalang-container p {
+      color: white; /* Warna teks pada kontainer belalang */
     }
 
     /* Floating Join Button */
@@ -111,10 +114,10 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      padding: 15px 30px;
+      padding: 20px 40px; /* Tombol lebih besar */
       border: none;
-      border-radius: 5px;
-      font-size: 16px;
+      border-radius: 10px;
+      font-size: 18px; /* Ukuran teks lebih besar */
       font-weight: bold;
       cursor: pointer;
       animation: pulse 0.2s infinite, blink 1.5s infinite;
