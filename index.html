@@ -13,18 +13,22 @@
         }
 
         body {
-            background-color: #f7f7f7;
+            background: linear-gradient(to right, #3498db, #8e44ad);
             padding: 20px;
+            overflow-x: hidden;
         }
 
         /* Judul Utama */
         .title {
             text-align: center;
-            font-size: 2.5em;
+            font-size: 3em;
             font-weight: bold;
             margin-bottom: 20px;
-            color: #2c3e50;
+            color: #1abc9c;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         /* Paragraf */
@@ -52,19 +56,22 @@
 
         .paragraf.segi6 {
             position: relative;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 0% 100%);
             background: linear-gradient(90deg, #66bb6a, #43a047);
+            width: 100%;
+            min-height: 200px;
         }
 
         /* Menu Navigasi (Hamburger Menu) */
         .menu {
-            position: absolute;
+            position: fixed;
             top: 20px;
             right: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            z-index: 100;
         }
 
         .menu div {
@@ -77,7 +84,7 @@
 
         .menu-items {
             display: none;
-            position: absolute;
+            position: fixed;
             top: 60px;
             right: 20px;
             background: #ffffff;
@@ -85,14 +92,17 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
             overflow: hidden;
+            width: 200px;
+            z-index: 101;
         }
 
         .menu-items a {
             display: block;
-            padding: 10px 15px;
+            padding: 15px;
             color: #2c3e50;
+            font-weight: bold;
             text-decoration: none;
-            font-size: 1em;
+            font-size: 1.1em;
             border-bottom: 1px solid #ddd;
         }
 
@@ -102,6 +112,45 @@
 
         .menu-items a:hover {
             background-color: #f4f4f4;
+        }
+
+        .menu.active + .menu-items {
+            display: block;
+        }
+
+        /* Gabung Sekarang Button */
+        .gabung-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #f39c12, #3498db);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            animation: pulse 1.5s infinite alternate;
+            z-index: 100;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                background: linear-gradient(45deg, #f39c12, #3498db);
+            }
+            100% {
+                transform: scale(1.1);
+                background: linear-gradient(45deg, #3498db, #f39c12);
+            }
+        }
+
+        /* Contener Burung Elang */
+        .paragraf.segi6 {
+            border-radius: 35%;
+            width: 100%;
+            min-height: 250px;
         }
     </style>
 </head>
@@ -135,14 +184,13 @@
         </div>
     </div>
 
+    <!-- Gabung Sekarang Button -->
+    <button class="gabung-button">Gabung Sekarang</button>
+
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menuItems');
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
         }
     </script>
 
