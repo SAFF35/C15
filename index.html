@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binatang</title>
+    <title>Smardy Affiliate</title>
     <style>
         * {
             margin: 0;
@@ -33,29 +33,34 @@
             top: 0;
             z-index: 100;
             padding: 10px 0;
+            background-color: #1a1d23;
+            border-radius: 10px 10px 0 0;
         }
 
         /* Paragraf */
         .paragraf-container {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             gap: 20px;
+            padding: 20px;
         }
 
         .paragraf {
             font-size: 1.2em;
             color: #f7f7f7;
             text-align: center;
-            max-width: 800px;
+            max-width: 100%;
+            width: 100%;
+            padding: 20px;
         }
 
         .paragraf.segi6 {
             position: relative;
-            clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%);
+            clip-path: polygon(10% 0%, 100% 20%, 100% 80%, 10% 100%, 0% 80%, 0% 20%);
             background: linear-gradient(90deg, #66bb6a, #43a047);
             width: 100%;
-            min-height: 250px;
+            min-height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -134,64 +139,70 @@
             border-radius: 50px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            animation: pulse 0.8s infinite alternate, colorShift 1s infinite alternate;
-            z-index: 100;
-        }
+```
+.gabung-button {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background: #800000;
+color: white;
+padding: 10px 20px;
+font-size: 0.9em;
+font-weight: bold;
+border-radius: 50px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+cursor: pointer;
+animation: pulse 0.8s infinite alternate, colorShift 1s infinite alternate;
+z-index: 100;
+}
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.2);
-            }
-        }
+@keyframes pulse {
+0% {
+transform: scale(1);
+}
+100% {
+transform: scale(1.2);
+}
+}
 
-        @keyframes colorShift {
-            0% {
-                background: #800000;
-            }
-            100% {
-                background: #ffff00;
-            }
-        }
-    </style>
+@keyframes colorShift {
+0% {
+background: #800000;
+}
+100% {
+background: #ffff00;
+}
+}
+
+</style>
 </head>
 <body>
-
-    <!-- Menu Navigasi -->
-    <div class="menu" onclick="toggleMenu()">Menu</div>
-    <div class="menu-items" id="menuItems">
-        <a href="https://contoh.com/profil">Profil</a>
-        <a href="https://contoh.com/legalitas">Legalitas</a>
-        <a href="https://contoh.com/komisi">Komisi</a>
-    </div>
-
-    <!-- Judul Utama -->
-    <div class="title">Binatang</div>
-
-    <!-- Paragraf -->
-    <div class="paragraf-container">
-        <div class="paragraf">
-            <p><b>Singa</b> adalah raja hutan yang dikenal karena kekuatannya. Singa hidup di sabana dan berburu mangsa dalam kelompok.</p>
-        </div>
-        <div class="paragraf segi6">
-            <p><b>Burung Elang</b> adalah burung pemangsa dengan penglihatan tajam. Mereka sering terlihat melayang di udara mencari mangsa.</p>
-        </div>
-        <div class="paragraf">
-            <p><b>Panda</b> adalah hewan lucu yang hidup di hutan bambu. Mereka terkenal karena bulunya yang hitam dan putih serta kebiasaan makan bambu.</p>
-        </div>
-    </div>
-
-    <!-- Gabung Sekarang Button -->
-    <button class="gabung-button">Gabung Sekarang</button>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menuItems');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        }
-    </script>
-
+<!-- Menu Navigasi -->
+<div class="menu" onclick="toggleMenu()">Menu</div>
+<div class="menu-items" id="menuItems">
+<a href="(link unavailable)">Profil</a>
+<a href="(link unavailable)">Legalitas</a>
+<a href="(link unavailable)">Komisi</a>
+</div>
+<!-- Judul Utama -->
+<div class="title">Smardy Affiliate</div>
+<!-- Paragraf -->
+<div class="paragraf-container">
+<div class="paragraf segi6">
+<p><b>Smardy Affiliate</b> adalah platform afiliasi yang membantu Anda mendapatkan penghasilan tambahan dengan mudah dan cepat.</p>
+</div>
+<div class="paragraf segi6">
+<p><b>Daftar sekarang</b> dan dapatkan akun afiliasi Anda. Pilih produk yang ingin Anda promosikan dan bagikan link afiliasi Anda ke media sosial atau website Anda.</p>
+</div>
+</div>
+<!-- Gabung Sekarang Button -->
+<button class="gabung-button">Gabung Sekarang</button>
+<script>
+function toggleMenu() {
+const menu = document.getElementById('menuItems');
+menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+</script>
 </body>
 </html>
+
