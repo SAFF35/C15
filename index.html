@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #001F54, #4A90E2); /* Gradiasi biru dongker ke terang */
+      background-color: #87CEEB; /* Warna biru langit dengan kecerahan sedang */
       color: #333;
     }
 
@@ -19,7 +19,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: linear-gradient(to bottom, #001F54, #4A90E2); /* Gradiasi header */
+      background-color: #001F54; /* Biru dongker */
       color: white;
       padding: 10px 20px;
       display: flex;
@@ -41,12 +41,11 @@
     }
 
     .menu {
-      display: flex;
-      gap: 10px;
+      position: relative;
     }
 
-    .menu button {
-      background-color: purple;
+    .menu > button {
+      background: purple;
       color: white;
       border: none;
       width: 40px;
@@ -58,6 +57,29 @@
 
     .menu-content {
       display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-content a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      padding: 10px 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .menu-content a:hover {
+      background-color: #f4f4f4;
+    }
+
+    .menu:hover .menu-content {
+      display: block;
     }
 
     /* Main Content */
@@ -78,10 +100,10 @@
     .belalang-container {
       background: white;
       border-radius: 50px;
-      clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
       padding: 20px;
       margin: 20px 0;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
     }
 
     /* Floating Join Button */
@@ -95,21 +117,26 @@
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      animation: pulse 0.5s infinite;
+      animation: pulse 0.2s infinite, blink 1.5s infinite;
     }
 
     @keyframes pulse {
-      0% {
-        background-color: yellow;
-        color: black;
+      0%, 100% {
+        transform: scale(1);
       }
       50% {
-        background-color: maroon;
-        color: white;
+        transform: scale(1.1);
       }
-      100% {
+    }
+
+    @keyframes blink {
+      0%, 50% {
         background-color: yellow;
         color: black;
+      }
+      100% {
+        background-color: maroon;
+        color: white;
       }
     }
   </style>
@@ -119,10 +146,12 @@
     <img src="https://affiliate035.wordpress.com/wp-content/uploads/2024/12/20241209_021657.png?w=768" alt="Logo">
     <h2>Fisika</h2>
     <div class="menu">
-      <button>M</button>
-      <button>E</button>
-      <button>N</button>
-      <button>U</button>
+      <button>Menu</button>
+      <div class="menu-content">
+        <a href="https://contoh.com/profil">Profil</a>
+        <a href="https://contoh.com/legalitas">Legalitas</a>
+        <a href="https://contoh.com/kondisi">Kondisi</a>
+      </div>
     </div>
   </header>
 
