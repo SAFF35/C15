@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #4A90E2, #2C3E50); /* Gradiasi biru */
+      background: linear-gradient(to bottom, #001F54, #4A90E2); /* Gradiasi biru dongker ke terang */
       color: #333;
     }
 
@@ -19,57 +19,45 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: #001F54; /* Biru dongker */
+      background: linear-gradient(to bottom, #001F54, #4A90E2); /* Gradiasi header */
       color: white;
       padding: 10px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
       z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header img {
+      width: 40px;
+      height: 40px;
+      margin-right: 15px;
     }
 
     header h2 {
+      flex: 1;
+      text-align: center;
       margin: 0;
     }
 
     .menu {
-      position: relative;
+      display: flex;
+      gap: 10px;
     }
 
-    .menu > button {
-      background: none;
-      border: 1px solid white;
+    .menu button {
+      background-color: purple;
       color: white;
-      padding: 5px 15px;
+      border: none;
+      width: 40px;
+      height: 40px;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 14px;
     }
 
     .menu-content {
       display: none;
-      position: absolute;
-      top: 40px;
-      right: 0;
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .menu-content a {
-      display: block;
-      text-decoration: none;
-      color: #333;
-      padding: 10px 15px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .menu-content a:hover {
-      background-color: #f4f4f4;
-    }
-
-    .menu:hover .menu-content {
-      display: block;
     }
 
     /* Main Content */
@@ -83,13 +71,14 @@
 
     p {
       margin-bottom: 20px;
+      line-height: 1.8;
     }
 
-    /* Whiteboard Styling */
-    .whiteboard {
-      width: 100%;
+    /* Special Belalang Section */
+    .belalang-container {
       background: white;
       border-radius: 50px;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
       padding: 20px;
       margin: 20px 0;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -109,61 +98,59 @@
       animation: pulse 0.5s infinite;
     }
 
-    .join-button.yellow {
-      background-color: yellow;
-      color: black;
-    }
-
-    .join-button.maroon {
-      background-color: maroon;
-      color: white;
-    }
-
     @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
+      0% {
+        background-color: yellow;
+        color: black;
       }
       50% {
-        transform: scale(1.1);
+        background-color: maroon;
+        color: white;
+      }
+      100% {
+        background-color: yellow;
+        color: black;
       }
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="https://affiliate035.wordpress.com/wp-content/uploads/2024/12/20241209_021657.png?w=768" alt="Logo">
     <h2>Fisika</h2>
     <div class="menu">
-      <button>Menu</button>
-      <div class="menu-content">
-        <a href="https://contoh.com/profil">Profil</a>
-        <a href="https://contoh.com/legalitas">Legalitas</a>
-        <a href="https://contoh.com/kondisi">Kondisi</a>
-      </div>
+      <button>M</button>
+      <button>E</button>
+      <button>N</button>
+      <button>U</button>
     </div>
   </header>
 
   <main>
-    <section class="whiteboard">
-      <h3>Ular</h3>
-      <p>Ular adalah reptil tanpa kaki yang memiliki kemampuan untuk bergerak dengan melata.</p>
+    <h3>Ular</h3>
+    <p>Ular adalah reptil tanpa kaki yang memiliki kemampuan untuk melata dengan menggunakan otot-otot di tubuhnya. Mereka ditemukan di berbagai habitat di seluruh dunia dan memiliki berbagai jenis spesies dengan karakteristik yang unik.</p>
 
-      <h3>Bebek</h3>
-      <p>Bebek adalah unggas yang sering ditemukan di lingkungan perairan seperti danau dan sawah.</p>
+    <h3>Bebek</h3>
+    <p>Bebek adalah unggas air yang dikenal dengan kemampuan berenang dan terbangnya. Mereka biasanya hidup di sekitar danau, sungai, dan sawah, dan sering dimanfaatkan manusia untuk diambil telur atau dagingnya.</p>
 
-      <h3>Kucing</h3>
-      <p>Kucing adalah hewan peliharaan yang dikenal karena kelucuannya dan sifat mandirinya.</p>
+    <h3>Kucing</h3>
+    <p>Kucing adalah salah satu hewan peliharaan paling populer di dunia. Mereka dikenal karena sifatnya yang mandiri, bulu yang lembut, dan kemampuannya untuk menjadi teman setia bagi manusia.</p>
 
-      <h3>Kodok</h3>
-      <p>Kodok adalah amfibi yang sering hidup di lingkungan basah seperti rawa dan kolam.</p>
+    <h3>Kodok</h3>
+    <p>Kodok adalah amfibi yang memiliki kulit licin dan hidup di tempat yang lembap seperti rawa dan kolam. Mereka memiliki kemampuan untuk melompat jauh dan merupakan bagian penting dari ekosistem.</p>
 
-      <h3>Elang</h3>
-      <p>Elang adalah burung pemangsa yang memiliki penglihatan tajam dan kemampuan terbang tinggi.</p>
+    <h3>Elang</h3>
+    <p>Elang adalah burung pemangsa yang memiliki penglihatan tajam dan kemampuan untuk terbang tinggi. Mereka biasanya memangsa hewan kecil seperti tikus dan ikan.</p>
 
-      <h3>Laron</h3>
-      <p>Laron adalah serangga yang biasanya muncul pada malam hari setelah hujan.</p>
-    </section>
+    <h3>Laron</h3>
+    <p>Laron adalah serangga yang muncul saat musim hujan, terutama di malam hari. Mereka biasanya tertarik pada cahaya dan merupakan bentuk reproduksi dari rayap sebelum membentuk koloni baru.</p>
+
+    <div class="belalang-container">
+      <h3>Belalang</h3>
+      <p>Belalang adalah serangga herbivora yang dikenal dengan kemampuan melompat yang luar biasa. Mereka memiliki tubuh ramping, kaki belakang yang kuat, dan antena panjang. Belalang memainkan peran penting dalam ekosistem dengan menjadi sumber makanan bagi burung dan reptil, tetapi dalam jumlah besar, mereka juga dapat merusak tanaman pertanian.</p>
+    </div>
   </main>
 
-  <button class="join-button yellow">Gabung</button>
+  <button class="join-button">Gabung</button>
 </body>
 </html>
