@@ -13,7 +13,7 @@
         }
 
         body {
-            background: linear-gradient(to right, #3498db, #8e44ad);
+            background: linear-gradient(to right, #1e3c72, #2a5298);
             padding: 20px;
             overflow-x: hidden;
         }
@@ -24,62 +24,64 @@
             font-size: 3em;
             font-weight: bold;
             margin-bottom: 20px;
-            color: #1abc9c;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            color: #1b2a4d;
+            background: linear-gradient(to right, #1b2a4d, #2a4e7c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
             position: sticky;
             top: 0;
             z-index: 100;
+            padding: 10px 0;
         }
 
         /* Paragraf */
         .paragraf-container {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
             gap: 20px;
         }
 
         .paragraf {
-            background: linear-gradient(90deg, #a5d6a7, #66bb6a);
-            padding: 20px;
-            color: white;
-            border-radius: 10px;
-            width: 250px;
-            height: auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            font-size: 1em;
+            font-size: 1.2em;
+            color: #f7f7f7;
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            max-width: 800px;
         }
 
         .paragraf.segi6 {
             position: relative;
-            clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 0% 100%);
+            clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%);
             background: linear-gradient(90deg, #66bb6a, #43a047);
             width: 100%;
-            min-height: 200px;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
-        /* Menu Navigasi (Hamburger Menu) */
+        .paragraf.segi6 p {
+            font-size: 1.2em;
+            color: white;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Menu Navigasi */
         .menu {
             position: fixed;
             top: 20px;
             right: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 8px;
             cursor: pointer;
             z-index: 100;
-        }
-
-        .menu div {
-            width: 30px;
-            height: 4px;
-            background: #2c3e50;
-            margin: 5px 0;
-            border-radius: 2px;
         }
 
         .menu-items {
@@ -145,23 +147,12 @@
                 background: linear-gradient(45deg, #3498db, #f39c12);
             }
         }
-
-        /* Contener Burung Elang */
-        .paragraf.segi6 {
-            border-radius: 35%;
-            width: 100%;
-            min-height: 250px;
-        }
     </style>
 </head>
 <body>
 
     <!-- Menu Navigasi -->
-    <div class="menu" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <div class="menu" onclick="toggleMenu()">Menu</div>
     <div class="menu-items" id="menuItems">
         <a href="https://contoh.com">Profil</a>
         <a href="https://contoh.com">Legalitas</a>
