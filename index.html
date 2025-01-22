@@ -1,197 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binatang</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fisika</title>
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #4A90E2, #2C3E50); /* Gradiasi biru */
+      color: #333;
+    }
 
-        body {
-            background: linear-gradient(to right, #1e3c72, #2a5298);
-            padding: 20px;
-            overflow-x: hidden;
-        }
+    /* Header Styling */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #001F54; /* Biru dongker */
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
 
-        /* Judul Utama */
-        .title-container {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: linear-gradient(to right, #6a1b9a, #8e24aa);
-            text-align: center;
-            padding: 20px 0;
-            color: white;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-        }
+    header h2 {
+      margin: 0;
+    }
 
-        .title {
-            font-size: 2.5em;
-            font-weight: bold;
-        }
+    .menu {
+      position: relative;
+    }
 
-        /* Paragraf */
-        .paragraf-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
+    .menu > button {
+      background: none;
+      border: 1px solid white;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-        .paragraf {
-            font-size: 1.2em;
-            color: #f7f7f7;
-            text-align: center;
-            max-width: 800px;
-        }
+    .menu-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        .paragraf.segi6 {
-            position: relative;
-            clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%);
-            background: linear-gradient(90deg, #66bb6a, #43a047);
-            width: 100%;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-            margin-left: 0;
-            margin-right: 0;
-        }
+    .menu-content a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      padding: 10px 15px;
+      border-bottom: 1px solid #ddd;
+    }
 
-        .paragraf.segi6 p {
-            font-size: 1.2em;
-            color: white;
-            text-align: center;
-            line-height: 1.6;
-        }
+    .menu-content a:hover {
+      background-color: #f4f4f4;
+    }
 
-        /* Menu Navigasi */
-        .menu {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: #2c3e50;
-            color: white;
-            padding: 5px 15px;
-            font-size: 0.9em;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 101;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+    .menu:hover .menu-content {
+      display: block;
+    }
 
-        .menu-items {
-            display: none;
-            position: fixed;
-            top: 50px;
-            right: 10px;
-            background: #ffffff;
-            border: 1px solid #ddd;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            overflow: hidden;
-            width: 150px;
-            z-index: 102;
-        }
+    /* Main Content */
+    main {
+      padding: 80px 20px;
+    }
 
-        .menu-items a {
-            display: block;
-            padding: 10px;
-            color: #2c3e50;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 0.9em;
-            border-bottom: 1px solid #ddd;
-        }
+    h3 {
+      color: #001F54;
+    }
 
-        .menu-items a:last-child {
-            border-bottom: none;
-        }
+    p {
+      margin-bottom: 20px;
+    }
 
-        .menu-items a:hover {
-            background-color: #f4f4f4;
-        }
+    /* Whiteboard Styling */
+    .whiteboard {
+      width: 100%;
+      background: white;
+      border-radius: 50px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        /* Gabung Sekarang Button */
-        .gabung-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #800000;
-            color: white;
-            padding: 10px 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-            border-radius: 50px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            animation: pulse 0.8s infinite alternate, colorShift 1s infinite alternate;
-            z-index: 100;
-        }
+    /* Floating Join Button */
+    .join-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      animation: pulse 0.5s infinite;
+    }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.2);
-            }
-        }
+    .join-button.yellow {
+      background-color: yellow;
+      color: black;
+    }
 
-        @keyframes colorShift {
-            0% {
-                background: #800000;
-            }
-            100% {
-                background: #ffff00;
-            }
-        }
-    </style>
+    .join-button.maroon {
+      background-color: maroon;
+      color: white;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+  </style>
 </head>
 <body>
-
-    <!-- Menu Navigasi -->
-    <div class="menu" onclick="toggleMenu()">Menu</div>
-    <div class="menu-items" id="menuItems">
+  <header>
+    <h2>Fisika</h2>
+    <div class="menu">
+      <button>Menu</button>
+      <div class="menu-content">
         <a href="https://contoh.com/profil">Profil</a>
         <a href="https://contoh.com/legalitas">Legalitas</a>
-        <a href="https://contoh.com/komisi">Komisi</a>
+        <a href="https://contoh.com/kondisi">Kondisi</a>
+      </div>
     </div>
+  </header>
 
-    <!-- Judul Utama -->
-    <div class="title-container">
-        <div class="title">Binatang</div>
-    </div>
+  <main>
+    <section class="whiteboard">
+      <h3>Ular</h3>
+      <p>Ular adalah reptil tanpa kaki yang memiliki kemampuan untuk bergerak dengan melata.</p>
 
-    <!-- Paragraf -->
-    <div class="paragraf-container">
-        <div class="paragraf">
-            <p><b>Singa</b> adalah raja hutan yang dikenal karena kekuatannya. Singa hidup di sabana dan berburu mangsa dalam kelompok.</p>
-        </div>
-        <div class="paragraf segi6">
-            <p><b>Burung Elang</b> adalah burung pemangsa dengan penglihatan tajam. Mereka sering terlihat melayang di udara mencari mangsa.</p>
-        </div>
-        <div class="paragraf">
-            <p><b>Panda</b> adalah hewan lucu yang hidup di hutan bambu. Mereka terkenal karena bulunya yang hitam dan putih serta kebiasaan makan bambu.</p>
-        </div>
-    </div>
+      <h3>Bebek</h3>
+      <p>Bebek adalah unggas yang sering ditemukan di lingkungan perairan seperti danau dan sawah.</p>
 
-    <!-- Gabung Sekarang Button -->
-    <a href="https://contoh.com" class="gabung-button">Gabung Sekarang</a>
+      <h3>Kucing</h3>
+      <p>Kucing adalah hewan peliharaan yang dikenal karena kelucuannya dan sifat mandirinya.</p>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menuItems');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        }
-    </script>
+      <h3>Kodok</h3>
+      <p>Kodok adalah amfibi yang sering hidup di lingkungan basah seperti rawa dan kolam.</p>
 
+      <h3>Elang</h3>
+      <p>Elang adalah burung pemangsa yang memiliki penglihatan tajam dan kemampuan terbang tinggi.</p>
+
+      <h3>Laron</h3>
+      <p>Laron adalah serangga yang biasanya muncul pada malam hari setelah hujan.</p>
+    </section>
+  </main>
+
+  <button class="join-button yellow">Gabung</button>
 </body>
 </html>
